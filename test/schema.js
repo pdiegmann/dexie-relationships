@@ -4,7 +4,8 @@ import SchemaParser from '../src/schema-parser'
 describe('SchemaParser', function () {
   let schema = {
     parent: 'id, name',
-    child: 'id, name, parent_id -> parent.id'
+    child: 'id, name, parent_id -> parent.id',
+    removed: null
   }
   let parser = new SchemaParser(schema)
 

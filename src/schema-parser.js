@@ -18,7 +18,8 @@ class SchemaParser {
     let foreignKeys = {}
 
     Object.keys(this.schema).forEach(table => {
-      let indexes = this.schema[table].split(',')
+      let indexes = this.schema[table] ? this.schema[table].split(',') : null
+      if (!indexes) return
 
       foreignKeys[table] = indexes
         .filter(idx => idx.indexOf('->') !== -1)
@@ -46,9 +47,10 @@ class SchemaParser {
     let schema = {}
 
     Object.keys(this.schema).forEach(table => {
-      let indexes = this.schema[table].split(',')
+      let indexes = this.schema[table] ? this.schema[table].split(',') : null
+      if (!indexes) return
 
-      // Remove foreign keys syntax before calling the original method
+       // Remove foreign keys syntax before calling the original method
       schema[table] = indexes.map(idx => idx.split('->')[0].trim()).join(',')
     })
 
