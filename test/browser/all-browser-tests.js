@@ -109,7 +109,7 @@ describe('simple', function () {
         assert (waterloo.band.name === "Abba", "The band should be Abba")
 
         assert (noBand.name === "No band")
-        assert (!noBand.band, null)
+        assert (!noBand.band || !noBand.band.length, null)
       })
     })
   })
@@ -128,7 +128,7 @@ describe('simple', function () {
             assert(album.band != null, "Album should have a band")
             assert(album.band.id === bandIds[idx], "Each album should be assigned the correct band")
           } else {
-            assert(!album.band, "Album should not have a band")
+            assert(!album.band || !album.band.length, "Album should not have a band")
           }
         })
       })
