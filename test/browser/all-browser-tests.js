@@ -1,7 +1,9 @@
 import assert from 'assert'
+import Dexie from 'dexie';
 import DexieRelationships from '../../src/index'
 
 describe('simple', function () {
+  console.log("Dexie Version:", Dexie.version)
   var Promise = Dexie.Promise;
   var db = new Dexie('bands-simple', {addons: [DexieRelationships]});
   db.version(1).stores({
@@ -74,6 +76,12 @@ describe('simple', function () {
           }])
         })
       })
+  })
+
+  describe('Dexie-Version', () => {
+    return it('should be >= 4.0.0', function () {
+      return new Promise((resolve) => resolve()).then(() => assert(Dexie.version >= 4))
+    })
   })
 
   describe('many-to-one', function () {
