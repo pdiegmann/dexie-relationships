@@ -1,6 +1,6 @@
 {
   "name": "dexie-relationships",
-  "version": "1.2.11",
+  "version": "1.3.0",
   "description": "Dexie relationship plugin",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -8,12 +8,12 @@
     "test": "tests"
   },
   "peerDependencies": {
-    "dexie": "^3.0.0-rc.4"
+    "dexie": "^3.2.2"
   },
   "devDependencies": {
     "buble": "^0.14.3",
     "chai": "^3.5.0",
-    "dexie": "^3.0.0-rc.4",
+    "dexie": "^3.2.2",
     "eslint": "^3.8.1",
     "eslint-config-standard": "^6.2.0",
     "eslint-plugin-promise": "^3.3.0",
